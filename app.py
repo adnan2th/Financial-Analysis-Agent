@@ -18,17 +18,17 @@ load_dotenv()
 # Groq Configuration
 # -------------------------
 
-api_key = os.getenv("GROQ_API")
+api_key = os.getenv("GROQ_API") or os.getenv("groq_api")
 
 if not api_key:
-    st.error("Groq API key missing in .env")
+    st.error("Groq API key missing in environment variables")
     st.stop()
 
 llm_config = {
     "config_list": [{
         "model": "openai/gpt-oss-20b",
         "api_key": api_key,
-        "base_url": "https://api.groq.com/openai/v1"
+        "base_url": "https://groq.com"
     }]
 }
 
