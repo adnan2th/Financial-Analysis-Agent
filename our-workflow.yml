@@ -1,12 +1,4 @@
-jobs:
-  run-script:
-    runs-on: ubuntu-latest
-    environment: production  # 👈 Change this to the exact name of your GitHub environment
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Run Groq Script
-        env:
-          GROQ_API: ${{ secrets.GROQ_API }}
-        run: python app.py
+- name: Run Groq Script
+  env:
+    groq_api: ${{ secrets.GROQ_API }} # Map your GitHub secret here
+  run: python app.py
