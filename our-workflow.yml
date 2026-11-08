@@ -1,4 +1,5 @@
 - name: Run Groq Script
-  env:
-    groq_api: ${{ secrets.GROQ_API }} # Map your GitHub secret here
-  run: python app.py
+        env:
+          GROQ_API: ${{ secrets.GROQ_API }}      # Changed to uppercase
+          OPENAI_API_KEY: ${{ secrets.GROQ_API }} # Double insurance for the SDK
+        run: python app.py
