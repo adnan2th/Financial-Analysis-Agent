@@ -17,7 +17,7 @@ st.write("Groq + AutoGen + Python")
 # -------------------------
 # Groq Configuration
 # -------------------------
-api_key = os.environ.get("GROQ_API")
+api_key = os.environ.get("groq_api")
 
 
 
