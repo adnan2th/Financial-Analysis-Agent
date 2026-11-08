@@ -1,4 +1,4 @@
 - name: Run Groq Script
   env:
-    groq_api: ${{ secrets.GROQ_API }} # Map your GitHub secret here
+    groq_api: ${{ secrets.GROQ_API}} # Map your GitHub secret here
   run: python app.py
