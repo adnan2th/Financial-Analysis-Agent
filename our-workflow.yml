@@ -1,5 +1,4 @@
- - name: Run Groq Script
-        env:
-          GROQ_API: ${{ secrets.GROQ_API }}
-          OPENAI_API_KEY: ${{ secrets.GROQ_API }} # 👈 Add this line to satisfy the SDK's fallback check
-        run: python app.py
+- name: Run Groq Script
+  env:
+    groq_api: ${{ secrets.GROQ_API }} # Map your GitHub secret here
+  run: python app.py
