@@ -18,7 +18,7 @@ load_dotenv()
 # Groq Configuration
 # -------------------------
 
-api_key = os.getenv("groq_api")
+api_key = os.getenv("GROQ_API")
 
 if not api_key:
     st.error("Groq API key missing in .env")
