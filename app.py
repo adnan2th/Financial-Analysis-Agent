@@ -9,10 +9,10 @@ from autogen import ConversableAgent, AssistantAgent
 from autogen.coding import LocalCommandLineCodeExecutor
 
 
-st.set_page_config(page_title="AI Stock Analyzer", page_icon="📈")
+st.set_page_config(page_title="Financial Analysis Agent", page_icon="📈")
 
-st.title("📈 AI Stock Analyzer")
-st.write("Groq + AutoGen + Python")
+st.title("📈 Financial Analysis Agent")
+
 #load_dotenv()
 # -------------------------
 # Groq Configuration
@@ -27,7 +27,6 @@ if not api_key:
 
 # 2. Trick the SDK's internal checks by populating the expected variable in memory
 os.environ["OPENAI_API_KEY"] = api_key
-
 llm_config = {
     "config_list": [
         {
