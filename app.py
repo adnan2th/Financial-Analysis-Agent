@@ -17,9 +17,16 @@ st.write("Groq + AutoGen + Python")
 # -------------------------
 # Groq Configuration
 # -------------------------
-api_key = os.environ.get("groq_api")
+load_dotenv()
 
+# 1. Look for the uppercase variable injected by GitHub Actions
+api_key = os.environ.get("GROQ_API")
 
+if not api_key:
+    raise ValueError("GROQ_API key is missing from environment variables!")
+
+# 2. Trick the SDK's internal checks by populating the expected variable in memory
+os.environ["OPENAI_API_KEY"] = api_key
 
 llm_config = {
     "config_list": [
@@ -30,7 +37,6 @@ llm_config = {
         }
     ]
 }
-
 # -------------------------
 # Stock Functions
 # -------------------------
