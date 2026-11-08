@@ -13,11 +13,11 @@ st.set_page_config(page_title="AI Stock Analyzer", page_icon="📈")
 
 st.title("📈 AI Stock Analyzer")
 st.write("Groq + AutoGen + Python")
-load_dotenv()
+#load_dotenv()
 # -------------------------
 # Groq Configuration
 # -------------------------
-api_key = os.environ.get("groq_api")
+api_key = os.environ.get("GROQ_API")
 
 
 
